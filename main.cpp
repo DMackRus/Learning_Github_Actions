@@ -17,6 +17,8 @@ int main() {
     int sum = add(num1, num2);
     std::cout << "Sum: " << sum << std::endl;
 
+    int subtraction = subtract(num1, num2);
+    std::cout << "Subtraction: " << subtraction << std::endl;
 
     return EXIT_SUCCESS;
 }
