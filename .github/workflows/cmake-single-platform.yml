@@ -39,7 +39,7 @@ jobs:
 
     - run: echo ${{ github.workspace }}
 
-    - run: echo "hello"
+    - run: echo "hello world"
 
     - name: Check_directory
       run: |
