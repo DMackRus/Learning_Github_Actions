@@ -22,6 +22,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Check_directory
+      run: |
+        if [ -d ${{github.workspace}}/build ]; then
+          echo "File exists"
+        else
+          echo "File does not exist"
+        fi
+
     - name: Print GitHub event action
       run: |
         echo "${{ github.event.action }}"
@@ -46,14 +54,6 @@ jobs:
     - name: print workspace
       run: |
         echo ${{ github.workspace }}
-
-    - name: Check_directory
-      run: |
-        if [ -d ${{github.workspace}}/build ]; then
-          echo "File exists"
-        else
-          echo "File does not exist"
-        fi
         
     - name: Check_file
       run: |
