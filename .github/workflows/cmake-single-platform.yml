@@ -38,6 +38,7 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}} --extra-verbose --output-junit testRes.xml
 
     - name: test_echo
+      shell: bash
       run: echo "does my echo appear"
 
     - name: Check_directory
