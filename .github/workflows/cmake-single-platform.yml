@@ -37,6 +37,9 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}} --extra-verbose --output-junit testRes.xml
 
+    - name: test_echo
+      run: echo "does my echo appear"
+
     - name: Check_directory
       run: |
         if [ -d ${{github.workspace}}/build ]; then
@@ -52,6 +55,7 @@ jobs:
         else
           echo "File does not exist"
         fi
+        
            
     - name: Test Reporter
       uses: dorny/test-reporter@v1.8.0
