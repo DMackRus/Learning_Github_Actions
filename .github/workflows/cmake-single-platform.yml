@@ -37,12 +37,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}} --extra-verbose --output-junit testRes.xml
 
-    - run: |
-        if [ -d ${{github.workspace}}/build ]; then
-          echo "File exists"
-        else
-          echo "File does not exist"
-        fi
+    - run: echo ${{github.workspace}}
 
     - name: Check_directory
       run: |
