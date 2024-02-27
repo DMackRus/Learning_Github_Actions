@@ -3,10 +3,7 @@
 //
 
 #include <iostream>
-
-int add(int num1, int num2);
-int subtract(int num1, int num2);
-int multiply(int num1, int num2);
+#include "basic_functions.h"
 
 
 int main() {
@@ -21,16 +18,4 @@ int main() {
     std::cout << "Subtraction: " << subtraction << std::endl;
 
     return EXIT_SUCCESS;
-}
-
-int add(int num1, int num2){
-    return num1 + num2;
-}
-
-int subtract(int num1, int num2){
-    return num1 - num2;
-}
-
-int multiply(int num1, int num2){
-    return num1 * num2 - 1;
 }
