@@ -22,14 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Check_directory
-      run: |
-        if [ -d ${{github.workspace}}/build ]; then
-          echo "File exists"
-        else
-          echo "File does not exist"
-        fi
-
     - name: Print GitHub event action
       run: |
         echo "${{ github.event.action }}"
@@ -43,17 +35,19 @@ jobs:
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
+    - name: Check_directory
+      run: |
+        if [ -d ${{github.workspace}}/build ]; then
+          echo "File exists"
+        else
+          echo "File does not exist"
+        fi
+
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}} --extra-verbose --output-junit testRes.xml
-
-    - run: echo ${{ github.workspace }}
-
-    - name: print workspace
-      run: |
-        echo ${{ github.workspace }}
         
     - name: Check_file
       run: |
