@@ -51,7 +51,7 @@ jobs:
 
     - name: Check_file
       run: |
-        if [ -f ${{github.workspace}}/build/test_results.xml]; then
+        if [ -f ${{github.workspace}}/build/test_results.xml ]; then
           echo "File exists"
         else
           echo "File does not exist"
