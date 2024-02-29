@@ -64,6 +64,13 @@ jobs:
       with:
         paths: ${{github.workspace}}/build/test_results.xml
         if: always()
+
+    - name: Upload test summary
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-summary
+        path: test-summary.md
+      if: always()
             
         # Possible cool thing for test reporter
     # - name: Test Reporter
