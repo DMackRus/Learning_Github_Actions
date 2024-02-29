@@ -41,6 +41,8 @@ jobs:
           echo "directory exists"
         else
           echo "directory does not exist"
+          cd build
+          ls
         fi
 
     - name: Test
