@@ -41,8 +41,6 @@ jobs:
           echo "directory exists"
         else
           echo "directory does not exist"
-          cd build
-          ls
         fi
 
     - name: Test
@@ -57,6 +55,8 @@ jobs:
           echo "File exists"
         else
           echo "File does not exist"
+          cd build
+          ls
         fi
 
     
