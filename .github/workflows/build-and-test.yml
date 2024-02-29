@@ -60,10 +60,12 @@ jobs:
         fi
 
     
-    # - name: TestForest Dashboard
-    #   uses: test-summary/action@v2.3
+    - name: TestForest Dashboard
+      uses: test-summary/action@v2.3
+      with:
+        paths: ${{github.workspace}}/build/test_results.xml
+        if: always()
             
-
         # Possible cool thing for test reporter
     # - name: Test Reporter
     #   uses: dorny/test-reporter@v1.8.0
