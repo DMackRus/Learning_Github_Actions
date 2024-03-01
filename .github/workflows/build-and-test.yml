@@ -64,6 +64,7 @@ jobs:
       with:
         paths: ${{github.workspace}}/build/test_results.xml
         show: "fail, skip"
+        output: "summary.md"
         # if: always()
 
 
