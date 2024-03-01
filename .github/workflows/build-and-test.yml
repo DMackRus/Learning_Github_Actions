@@ -63,7 +63,8 @@ jobs:
       uses: test-summary/action@v2.3
       with:
         paths: ${{github.workspace}}/build/test_results.xml
-        if: always()
+        show: "fail, skip"
+        # if: always()
 
 
     # - name: Upload test summary
